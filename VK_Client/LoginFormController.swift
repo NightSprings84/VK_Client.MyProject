@@ -35,29 +35,53 @@ class LoginFormController: UIViewController {
         
                 // Второе — когда она пропадает
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillBeHidden(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
-            }
+    }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
-        }
-
-
-    @IBAction func buttonPressed(_ sender: UIButton) {
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         // Получаем текст логина
         let login = loginTextField.text!
         // Получаем текст-пароль
         let password = passwordTextField.text!
         
         // Проверяем, верны ли они
-        if login == "admin" && password == "123456" {
+        if login == "1234" && password == "1234" {
             print("успешная авторизация")
+            return true
         } else {
             print("неуспешная авторизация")
+            showAlertError()
+            return false
         }
+    }
+    
+    private func showAlertError() {
+        let alert = UIAlertController(title: "Ошибка", message: "Введены неверные логин или пароль", preferredStyle: .alert)
+        
+        let loyaltyAction = UIAlertAction(title: "Хорошо, исправлюсь", style: .cancel, handler: nil)
+        
+        let action = UIAlertAction(title: "OK", style: .default) { _ in
+            self.loginTextField.text = ""
+            self.passwordTextField.text = ""
+            print("Action tapped")
+        }
+        
+        alert.addAction(loyaltyAction)
+        alert.addAction(action)
+        self.present(alert, animated: true) {
+            print("Alert closed")
+        }
+    }
 
+
+    @IBAction func buttonPressed(_ sender: UIButton) {
+       
     }
     
     @objc func hideKeyboard() {
@@ -75,13 +99,14 @@ class LoginFormController: UIViewController {
     // Добавляем отступ внизу UIScrollView, равный размеру клавиатуры
     self.scrollView?.contentInset = contentInsets
     scrollView?.scrollIndicatorInsets = contentInsets
-}
+    }
 
 //Когда клавиатура исчезает
 @objc func keyboardWillBeHidden(notification: Notification) {
     // Устанавливаем отступ внизу UIScrollView, равный 0
     let contentInsets = UIEdgeInsets.zero
     scrollView?.contentInset = contentInsets
+    scrollView?.scrollIndicatorInsets = contentInsets
 }
 
 }
