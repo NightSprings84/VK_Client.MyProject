@@ -9,7 +9,6 @@ import UIKit
 
 struct GalleryModel {
 
-//    let name: String
     let image: UIImage
 
 }

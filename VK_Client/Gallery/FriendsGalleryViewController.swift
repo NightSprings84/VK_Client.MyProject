@@ -9,7 +9,7 @@ import UIKit
 
 class FriendsGalleryViewController: UIViewController {
     
-    var images = FriendsStorage.shared.friends
+    var imageFriend: FriendsModel?
     
     @IBOutlet private weak var collectionView: UICollectionView!
     
@@ -31,7 +31,7 @@ extension FriendsGalleryViewController: UICollectionViewDelegate, UICollectionVi
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GalleryCollectionCell.identifire, for: indexPath) as!
             GalleryCollectionCell
         
-        cell.configure(images[indexPath.item])
+        cell.configure(imageFriend!)
         
         return cell
     }

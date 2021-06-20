@@ -11,18 +11,18 @@ struct FriendsModel {
     
     let name: String
     let avatar: UIImage
-    let images: [GalleryModel] = [
-        GalleryModel(image: UIImage(named: "JohnTrav")!),
-        GalleryModel(image: UIImage(named: "Ryan Gosling")!),
-        GalleryModel(image: UIImage(named: "Leo DiCaprio")!),
-        GalleryModel(image: UIImage(named: "Mark Ruffalo")!),
-        GalleryModel(image: UIImage(named: "Emily Blunt")!),
-        GalleryModel(image: UIImage(named: "Emma Stone")!),
-        GalleryModel(image: UIImage(named: "Jude Low")!),
-        GalleryModel(image: UIImage(named: "Liam Nesson")!),
-        GalleryModel(image: UIImage(named: "Tom Holland")!),
-        GalleryModel(image: UIImage(named: "Nicole Kidman")!)
-    ]
+//    let images: [GalleryModel] = [
+//        GalleryModel(image: UIImage(named: "JohnTrav")!),
+//        GalleryModel(image: UIImage(named: "Ryan Gosling")!),
+//        GalleryModel(image: UIImage(named: "Leo DiCaprio")!),
+//        GalleryModel(image: UIImage(named: "Mark Ruffalo")!),
+//        GalleryModel(image: UIImage(named: "Emily Blunt")!),
+//        GalleryModel(image: UIImage(named: "Emma Stone")!),
+//        GalleryModel(image: UIImage(named: "Jude Low")!),
+//        GalleryModel(image: UIImage(named: "Liam Nesson")!),
+//        GalleryModel(image: UIImage(named: "Tom Holland")!),
+//        GalleryModel(image: UIImage(named: "Nicole Kidman")!)
+//    ]
     
 }
 

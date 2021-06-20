@@ -24,9 +24,7 @@ final class MyFrindsViewController: UIViewController {
         let destinationController = segue.destination as? FriendsGalleryViewController,
         let indexSelectedCell = tableView.indexPathForSelectedRow {
             let friend = friends[indexSelectedCell.row]
-            let destinationImages = [FriendsModel]()
-            destinationController.
-//            destinationController.images = friend.images
+            destinationController.imageFriend = friend
         }
     }
   
