@@ -15,8 +15,6 @@ class LoginFormController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         titleLabel.text = "VK Client"
@@ -51,7 +49,7 @@ class LoginFormController: UIViewController {
         let password = passwordTextField.text!
         
         // Проверяем, верны ли они
-        if login == "1234" && password == "1234" {
+        if login == "1" && password == "1" {
             print("успешная авторизация")
             return true
         } else {
